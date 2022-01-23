@@ -1,0 +1,50 @@
+.previewer {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  width: 60vw;
+  min-width: 340px;
+  min-height: 90vh;
+  margin-top: 20px;
+
+  @media screen and (max-width: 850px) {
+    width: 95vw;
+  }
+
+  .previewer-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    h1 {
+      padding-left: 20px;
+      margin-top: 20px;
+    }
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  pre {
+    background-color: #1e1e1e;
+    overflow: auto;
+    padding: 20px;
+  }
+
+  code {
+    background-color: #1e1e1e;
+    color: white;
+  }
+
+  blockquote {
+    border-left: 3px solid dodgerblue;
+    padding: 0 10px;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid black;
+  }
+
+  img {
+    width: 100%;
+    margin-top: 20px;
+  }
+}

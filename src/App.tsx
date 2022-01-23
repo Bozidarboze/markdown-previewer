@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
-function App() {
+import "./App.css";
+import Previewer from "./components/Previewer/Previewer";
+import Editor from "./components/Editor/Editor";
+
+import DEFAULT_MARKDOWN from "./DEFAULT_MARKDOWN";
+
+interface Markdown {
+  target: Target;
+}
+
+interface Target {
+  value: string;
+}
+
+const App = () => {
+  const [markdown, setMarkdown] = useState<string>(DEFAULT_MARKDOWN);
+  const handleInput = (e: Markdown): void => {
+    setMarkdown(e.target.value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <Editor handleInput={handleInput} markdown={markdown} />
+      <Previewer markdown={markdown} />
     </div>
   );
-}
+};
 
 export default App;
